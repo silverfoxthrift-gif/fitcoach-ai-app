@@ -25,6 +25,9 @@
   --on-lime: #0c1100;
   --amber: #ff9a3d;
   --amber-glow: rgba(255, 154, 61, 0.3);
+  --danger: #e0674c;
+  --danger-dim: rgba(224, 103, 76, 0.12);
+  --danger-border: rgba(224, 103, 76, 0.42);
 
   /* Radii & motion */
   --r-sm: 9px;
@@ -574,6 +577,78 @@ select {
   color: var(--text);
   font-weight: 600;
 }
+
+/* Start over (rail footer) — quiet by default, warms to danger on intent */
+.rail-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 2px;
+  padding: 11px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+.rail-reset .ic {
+  font-size: 15px;
+  line-height: 1;
+}
+.rail-reset:hover {
+  color: var(--danger);
+  border-color: var(--danger-border);
+  background: var(--danger-dim);
+}
+.rail-reset-confirm {
+  margin-top: 2px;
+  padding: 13px 14px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--danger-border);
+  background: var(--danger-dim);
+  animation: rise 0.3s var(--ease) both;
+}
+.rail-reset-confirm p {
+  margin-bottom: 11px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.rr-row {
+  display: flex;
+  gap: 8px;
+}
+.rr-row button {
+  flex: 1;
+  padding: 9px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.16s var(--ease), color 0.18s, border-color 0.18s,
+    background 0.18s;
+}
+.rr-cancel {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--muted);
+}
+.rr-cancel:hover {
+  color: var(--text);
+  border-color: var(--faint);
+}
+.rr-go {
+  border: 1px solid var(--danger);
+  background: var(--danger);
+  color: #1a0a06;
+}
+.rr-go:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -12px var(--danger-border);
+}
 .rail .card:nth-child(2) {
   animation-delay: 0.02s;
 }
@@ -1102,8 +1177,12 @@ select {
   .rail .card {
     flex: 1 1 240px;
   }
-  .rail-intro {
+  .rail-intro,
+  .rail-reset,
+  .rail-reset-confirm {
     flex-basis: 100%;
+  }
+  .rail-intro {
     margin: 0;
   }
   .brand-sub {

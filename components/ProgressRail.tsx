@@ -7,6 +7,7 @@ import {
   levelInfo,
   streakAtRisk,
 } from "@/lib/gamification";
+import ResetProgress from "./ResetProgress";
 
 export default function ProgressRail({ progress }: { progress: Progress }) {
   const info = levelInfo(progress.totalXp);
@@ -82,6 +83,8 @@ export default function ProgressRail({ progress }: { progress: Progress }) {
           })}
         </div>
       </div>
+
+      <ResetProgress />
     </>
   );
 }
