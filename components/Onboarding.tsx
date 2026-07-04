@@ -37,7 +37,7 @@ export default function Onboarding({
               <h2>Let&apos;s tailor your training</h2>
             </div>
           </div>
-          <p>Three quick taps so every answer fits you. Takes 20 seconds.</p>
+          <p>Three quick taps so every answer fits you — or skip and start chatting right away.</p>
         </div>
 
         <div className="modal-body">
@@ -81,7 +81,7 @@ export default function Onboarding({
               })
             }
           >
-            Skip for now
+            Skip — just start chatting
           </button>
         </div>
       </div>

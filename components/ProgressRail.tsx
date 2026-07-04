@@ -16,6 +16,10 @@ export default function ProgressRail({ progress }: { progress: Progress }) {
 
   return (
     <>
+      <p className="rail-intro">
+        Your progress. <b>Every message earns XP</b> — level up and keep your streak alive.
+      </p>
+
       {/* Level + XP */}
       <div className="card level-card">
         <div className="level-top">
